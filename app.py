@@ -9,7 +9,7 @@ reddit = praw.Reddit(client_id=os.environ["CLIENT_ID"],
                      username=os.environ["USERNAME"],
                      password=os.environ["PASSWORD"])
 
-webhook = dhooks.Webhook(f"https://discord.com/api/webhooks/{os.environ["WEBHOOK_ID"]}/{os.environ["WEBHOOK_TOKEN"]}")
+webhook = dhooks.Webhook(f"https://discord.com/api/webhooks/{os.environ['WEBHOOK_ID']}/{os.environ['WEBHOOK_TOKEN']}")
 
 for submission in reddit.subreddit(SUBREDDIT).stream.submissions():
         print(submission.title)

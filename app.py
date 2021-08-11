@@ -1,19 +1,15 @@
 import dhooks
 import discord
 import praw
+import os 
 
-# ENTER YOUR WEBHOOK ID AND WEBHOOK TOKEN HERE
-WEBHOOK_ID = ""
-WEBHOOK_TOKEN = ""
-SUBREDDIT = ""
-
-reddit = praw.Reddit(client_id="",
-                     client_secret="",
+reddit = praw.Reddit(client_id=os.environ["CLIENT_ID"],
+                     client_secret=os.environ["CLIENT_SECRET"],
                      user_agent="",
-                     username="",
-                     password="")
+                     username=os.environ["USERNAME"],
+                     password=os.environ["PASSWORD"])
 
-webhook = dhooks.Webhook(f"https://discord.com/api/webhooks/{WEBHOOK_ID}/{WEBHOOK_TOKEN}")
+webhook = dhooks.Webhook(f"https://discord.com/api/webhooks/{os.environ["WEBHOOK_ID"]}/{os.environ["WEBHOOK_TOKEN"]}")
 
 for submission in reddit.subreddit(SUBREDDIT).stream.submissions():
         print(submission.title)

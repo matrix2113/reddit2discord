@@ -13,6 +13,7 @@ webhook = dhooks.Webhook(f"https://discord.com/api/webhooks/{os.environ['WEBHOOK
 
 for submission in reddit.subreddit(os.environ["SUBREDDIT"]).stream.submissions():
         print(submission.title)
+        return
         embd = discord.Embed()
         embd.description = submission.title
         embd.title= submission.url

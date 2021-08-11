@@ -20,7 +20,7 @@ submission = reddit.submission("ohl82i")
 print(submission)
 
 utc_time = datetime.utcfromtimestamp(float(submission.created_utc))
-print(utc_time.strftime("%Y-%m-%d %H:%M:%S.%f+00:00 (UTC)"))
+print(utc_time.strftime("%Y-%m-%d %H:%M:%S (UTC)"))
 embd = discord.Embed()
 embd.set_author(name=submission.author, icon_url=submission.author.icon_img, url=f"https://reddit.com/user/{submission.author}")
 embd.description = submission.title

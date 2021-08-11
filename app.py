@@ -24,6 +24,6 @@ utc_time = datetime.utcfromtimestamp(float(submission.created_utc))
 embd = discord.Embed()
 embd.set_author(name=submission.author, icon_url=submission.author.icon_img, url=f"https://reddit.com/user/{submission.author}")
 embd.title= submission.title
-embd.description = submission.link_flair_text
+embd.description = submission.selftext
 embd.set_footer(text=f"ID: {submission.id} | {utc_time.strftime('%m-%d-%Y %H:%M:%S (UTC)')}")
 webhook.send(embed=embd)

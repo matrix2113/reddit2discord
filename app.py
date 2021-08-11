@@ -11,7 +11,7 @@ reddit = praw.Reddit(client_id=os.environ["CLIENT_ID"],
 
 webhook = dhooks.Webhook(f"https://discord.com/api/webhooks/{os.environ['WEBHOOK_ID']}/{os.environ['WEBHOOK_TOKEN']}")
 
-for submission in reddit.subreddit(SUBREDDIT).stream.submissions():
+for submission in reddit.subreddit(os.environ["SUBREDDIT"]).stream.submissions():
         print(submission.title)
         embd = discord.Embed()
         embd.description = submission.title

@@ -2,9 +2,10 @@ import dhooks
 import discord
 import praw
 
-import datetime
 import time
 import os 
+
+from datetime import datetime
 
 reddit = praw.Reddit(client_id=os.environ["CLIENT_ID"],
                      client_secret=os.environ["CLIENT_SECRET"],

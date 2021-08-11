@@ -24,3 +24,4 @@ for submission in reddit.subreddit(os.environ["SUBREDDIT"]).stream.submissions()
   embd.description = submission.selftext
   embd.set_footer(text=f"ID: {submission.id} | {utc_time.strftime('%m-%d-%Y %H:%M:%S (UTC)')}")
   webhook.send(embed=embd)
+  time.sleep(15)

@@ -17,9 +17,11 @@ webhook = dhooks.Webhook(f"https://discord.com/api/webhooks/{os.environ['WEBHOOK
 submission = reddit.submission("ohl82i")
 print(submission)
 
+datetime = time.strftime("%D %H:%M", time.localtime(int({submission.created_utc})))
+
 embd = discord.Embed()
 embd.set_author(name=submission.author, icon_url=submission.author.icon_img, url=f"https://reddit.com/user/{submission.author}")
 embd.description = submission.title
 embd.title= submission.url
-embd.set_footer(text=f"ID: {submission.id} | {time.strftime("%D %H:%M", time.localtime(int({submission.created_utc})))}")
+embd.set_footer(text=f"ID: {submission.id} | {datetime}")
 webhook.send(embed=embd)

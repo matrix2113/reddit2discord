@@ -17,8 +17,8 @@ webhook = Webhook(f"https://discord.com/api/webhooks/{WEBHOOK_ID}/{WEBHOOK_TOKEN
 
 for submission in reddit.subreddit(SUBREDDIT).stream.submissions():
         print(submission.title)
-        if submission is None:
-          return
+        if not submission:
+            return
         embd = discord.Embed()
         embd.description = submission.title
         embd.title= submission.url

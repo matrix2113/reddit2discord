@@ -19,4 +19,5 @@ embd = discord.Embed()
 embd.set_author(name=submission.author, icon_url=submission.author.icon_img, url=f"https://reddit.com/user/{submission.author}")
 embd.description = submission.title
 embd.title= submission.url
+embd.timestamp = submission.created_utc
 webhook.send(embed=embd)

@@ -18,7 +18,7 @@ webhook = dhooks.Webhook(f"https://discord.com/api/webhooks/{os.environ['WEBHOOK
 for submission in reddit.subreddit(os.environ["SUBREDDIT"]).stream.submissions():
   print(submission.title)
   utc_time = datetime.utcfromtimestamp(float(submission.created_utc))
-  embd = discord.Embed()
+  embd = discord.Embed(color=0xE02424)
   embd.set_author(name=submission.author, icon_url=submission.author.icon_img, url=f"https://reddit.com/user/{submission.author}")
   embd.title= submission.title
   embd.description = submission.selftext

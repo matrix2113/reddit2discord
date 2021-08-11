@@ -16,7 +16,7 @@ submission = reddit.submission("ohl82i")
 print(submission)
 
 embd = discord.Embed()
-embd.set_author(name=submission.author.icon_img) #, url='https://b1naryth1ef.github.com/disco', icon_url='http://i.imgur.com/1tjdUId.jpg')
+embd.set_author(name=submission.author), icon_url=submission.author.icon_img) #), icon_url='http://i.imgur.com/1tjdUId.jpg')
 embd.description = submission.title
 embd.title= submission.url
 webhook.send(embed=embd)

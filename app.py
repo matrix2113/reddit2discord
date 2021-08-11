@@ -14,7 +14,9 @@ webhook = dhooks.Webhook(f"https://discord.com/api/webhooks/{os.environ['WEBHOOK
 # for submission in reddit.subreddit(os.environ["SUBREDDIT"]).stream.submissions():
 submission = reddit.submission("ohl82i")
 print(submission)
+
 embd = discord.Embed()
+embed.set_author(name=submission.author) #, url='https://b1naryth1ef.github.com/disco', icon_url='http://i.imgur.com/1tjdUId.jpg')
 embd.description = submission.title
 embd.title= submission.url
 webhook.send(embed=embd)

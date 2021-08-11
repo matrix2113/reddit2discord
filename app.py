@@ -5,7 +5,7 @@ import os
 
 reddit = praw.Reddit(client_id=os.environ["CLIENT_ID"],
                      client_secret=os.environ["CLIENT_SECRET"],
-                     user_agent="",
+                     user_agent="python",
                      username=os.environ["USERNAME"],
                      password=os.environ["PASSWORD"])
 

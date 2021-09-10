@@ -28,4 +28,4 @@ for submission in reddit.subreddit(os.environ["SUBREDDIT"]).stream.submissions()
     webhook.send(embed=embd)
     time.sleep(15)
   except Exception as e:
-    return
+    time.sleep(30)

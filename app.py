@@ -26,6 +26,6 @@ for submission in reddit.subreddit(os.environ["SUBREDDIT"]).stream.submissions()
   embd.set_footer(text=f"ID: {submission.id} | {utc_time.strftime('%m-%d-%Y %H:%M:%S (UTC)')}")
   try:
     webhook.send(embed=embd)
-    time.sleep(15)
-  except Exception as e:
     time.sleep(30)
+  except Exception as e:
+    time.sleep(60)
